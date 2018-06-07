@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Xzhui-cms-service:war">
+    <output-path>$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-service/target</output-path>
+    <root id="archive" name="Xzhui-cms-service.war">
+      <element id="artifact" artifact-name="Xzhui-cms-service:war exploded" />
+    </root>
+  </artifact>
+</component>

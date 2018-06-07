@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms.iml" filepath="$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-dao/Xzhui-cms-dao.iml" filepath="$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-dao/Xzhui-cms-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-interface/Xzhui-cms-interface.iml" filepath="$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-interface/Xzhui-cms-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-pojo/Xzhui-cms-pojo.iml" filepath="$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-pojo/Xzhui-cms-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-service/Xzhui-cms-service.iml" filepath="$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-service/Xzhui-cms-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-services/Xzhui-cms-services.iml" filepath="$PROJECT_DIR$/../Xzhui-cms/Xzhui-cms-services/Xzhui-cms-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-cms-web/Xzhui-cms-web.iml" filepath="$PROJECT_DIR$/../Xzhui-cms-web/Xzhui-cms-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xzhui-common/Xzhui-common.iml" filepath="$PROJECT_DIR$/../Xzhui-common/Xzhui-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Xzhui-parent.iml" filepath="$PROJECT_DIR$/Xzhui-parent.iml" />
+    </modules>
+  </component>
+</project>
