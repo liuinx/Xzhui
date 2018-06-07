@@ -14,30 +14,30 @@ import java.io.Serializable;
 import java.util.Locale;
 
 /**
- * ÏìÓ¦½á¹û
+ * å“åº”ç»“æœ
  * Created by LIN on 2018/06/06.
  */
-@ApiModel(value = "ÏìÓ¦ĞÅÏ¢")
+@ApiModel(value = "å“åº”ä¿¡æ¯")
 public class ResponseResult<T> implements Serializable {
     private  static  Logger logger = LoggerFactory.getLogger(ResponseResult.class);
 
     private static final long serialVersionUID = 6382523290069620956L;
 
-    @ApiModelProperty("ÏìÓ¦Âë£¬±íÊ¾ÇëÇó³É¹¦¡£200£º³É¹¦")
+    @ApiModelProperty("å“åº”ç ï¼Œè¡¨ç¤ºè¯·æ±‚æˆåŠŸã€‚200ï¼šæˆåŠŸ")
     private String code;
 
-    @ApiModelProperty("ÏìÓ¦ÃèÊö")
+    @ApiModelProperty("å“åº”æè¿°")
     private String msg;
 
-    @ApiModelProperty("·µ»ØÊı¾İ")
+    @ApiModelProperty("è¿”å›æ•°æ®")
     private T data;
 
     @JsonIgnore
-    @ApiModelProperty("¹ú¼Ê»¯´úÂë")
+    @ApiModelProperty("å›½é™…åŒ–ä»£ç ")
     private String i18nCode;
 
     @JsonIgnore
-    @ApiModelProperty("¹ú¼Ê»¯ÊäÈë²ÎÊı")
+    @ApiModelProperty("å›½é™…åŒ–è¾“å…¥å‚æ•°")
     private Object[] i18nArgs;
 
     public ResponseResult(){ super(); }
@@ -70,7 +70,7 @@ public class ResponseResult<T> implements Serializable {
     }
 
     public String getMsg() {
-        // Èç¹ûÃ»ÓĞÅäÖÃ¹ú¼Ê»¯code£¬¾ÍÖ±½Ó·µ»Ø
+        // å¦‚æœæ²¡æœ‰é…ç½®å›½é™…åŒ–codeï¼Œå°±ç›´æ¥è¿”å›
         if (StringUtils.isBlank(this.getI18nCode())) {
             return this.msg;
         }
