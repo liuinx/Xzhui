@@ -2,16 +2,11 @@ package cn.zhui.core.entity;
 
 import cn.zhui.core.utils.ResponseCode;
 import cn.zhui.core.utils.SpringContextHolder;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.i18n.LocaleContextHolder;
-
 import java.io.Serializable;
-import java.util.Locale;
 
 /**
  * 响应结果
