@@ -28,17 +28,12 @@ public class ResponseResult<T> implements Serializable {
 
     @ApiModelProperty("响应描述")
     private String msg;
-
+    
+    @ApiModelProperty("数据总数")
+    private int count;
+    
     @ApiModelProperty("返回数据")
     private T data;
-
-    @JsonIgnore
-    @ApiModelProperty("国际化代码")
-    private String i18nCode;
-
-    @JsonIgnore
-    @ApiModelProperty("国际化输入参数")
-    private Object[] i18nArgs;
 
     public ResponseResult(){ super(); }
 
@@ -46,6 +41,7 @@ public class ResponseResult<T> implements Serializable {
         super();
         this.code = code;
         this.msg = msg;
+        this.count = count;
         this.data = data;
     }
 
@@ -56,43 +52,23 @@ public class ResponseResult<T> implements Serializable {
         return  this;
     }
 
-    public String getI18nCode() { return i18nCode; }
-
-    public Object[] getI18nArgs() { return i18nArgs; }
-
-    public void setI18nArgs(Object[] i18nArgs) {
-        this.i18nArgs = i18nArgs;
-    }
-
-    public ResponseResult<T> setI18nCode(String i18nCode) {
-        this.i18nCode = i18nCode;
-        return this;
-    }
-
     public String getMsg() {
-        // 如果没有配置国际化code，就直接返回
-        if (StringUtils.isBlank(this.getI18nCode())) {
-            return this.msg;
-        }
-        Locale locale = LocaleContextHolder.getLocale();
-        if (locale == null) {
-            return this.msg;
-        }
-        String i18nMsg = null;
-        try {
-            i18nMsg = SpringContextHolder.getApplicationContext().getMessage(i18nCode, this.getI18nArgs(), locale);
-
-        } catch (Exception e) {
-            logger.warn("get i18n msg for code[" + i18nCode + "] failed");
-        }
-        return StringUtils.isBlank(i18nMsg) || this.getI18nCode().equals(i18nMsg) ? this.msg : i18nMsg;
-    }
+		return msg;
+	}
 
     public ResponseResult<T> setMsg(String msg) {
         this.msg = msg;
         return this;
     }
-
+    
+    public int getCount() {
+		return count;
+	}
+	public ResponseUtils<T> setCount(int count) {
+		this.count = count;
+		return this;
+	}
+    
     public T getData() {
         return data;
     }
@@ -102,18 +78,20 @@ public class ResponseResult<T> implements Serializable {
         return this;
     }
 
-    public static ResponseResult<String> success() { return success(""); }
+    public static ResponseResult<String> success() { 
+        return success(""); 
+    }
 
     public static <T> ResponseResult<T> success(T data){
-        return  new ResponseResult<T>().setCode(ResponseCode.Success.getCode())
-                .setI18nCode(ResponseCode.Success.getKey()).setMsg(ResponseCode.Success.getMsg())
-                .setData(data);
+       return new ResponseUtils<T>().setCode(ResponseCode.Success.getCode())
+				.setCount(PageView.getRowCount()).setMsg(ResponseCode.Success.getMsg())
+				.setData(data);
     }
 
     public static ResponseResult<String> fail( ResponseCode code) { return fail(code,""); }
 
     public static <T> ResponseResult<T> fail( ResponseCode code , T data) {
-        return new ResponseResult<T>().setCode(code.getCode()).setI18nCode(code.getKey())
+        return new ResponseResult<T>().setCode(code.getCode()).setCount(PageView.getRowCount())
                 .setMsg(code.getMsg()).setData(data);
     }
 }
